@@ -3,67 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sukoon Tab Privacy Policy</title>
+    <title>Sukoon Tab — Privacy Policy</title>
     <style>
-      body {
-        font-family: system-ui, sans-serif;
-        line-height: 1.6;
-        max-width: 720px;
-        margin: 2rem auto;
-        padding: 0 1.25rem;
-        color: #1a1f2e;
+      :root {
+        color-scheme: light dark;
+        --text: #1a1f2e;
+        --muted: #5c6478;
+        --border: rgba(26, 31, 46, 0.12);
+        --accent: #2f6f5e;
       }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text: #eef1f7;
+          --muted: #a8b0c2;
+          --border: rgba(238, 241, 247, 0.12);
+          --accent: #6fbfae;
+        }
+      }
+
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        line-height: 1.65;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+        color: var(--text);
+      }
+
       h1 {
         font-size: 1.75rem;
+        margin: 0 0 0.35rem;
       }
+
+      .updated {
+        color: var(--muted);
+        margin: 0 0 1.5rem;
+        font-size: 0.9375rem;
+      }
+
       h2 {
         font-size: 1.125rem;
-        margin-top: 1.75rem;
+        margin: 2rem 0 0.75rem;
+        padding-top: 0.25rem;
+        border-top: 1px solid var(--border);
       }
+
+      h2:first-of-type {
+        border-top: 0;
+        margin-top: 1.25rem;
+      }
+
+      p,
+      li {
+        font-size: 0.96875rem;
+      }
+
       ul {
         padding-left: 1.25rem;
+        margin: 0.5rem 0 0;
+      }
+
+      li + li {
+        margin-top: 0.35rem;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      strong {
+        font-weight: 600;
       }
     </style>
   </head>
   <body>
     <h1>Privacy Policy</h1>
-    <p>Last updated: June 13, 2026</p>
+    <p class="updated">Last updated: June 15, 2026</p>
+
     <p>
-      Sukoon Tab (“we”, “the extension”) is a Chrome new tab extension. This policy explains what
-      information is used, where it is stored, and which third-party services may be contacted when
-      you use the extension.
+      Sukoon Tab (“we”, “the extension”) is a Chrome new tab extension. This policy describes what
+      information the extension uses, where it is stored, and which third-party services may be
+      contacted when you use Sukoon Tab.
     </p>
 
     <h2>Summary</h2>
     <ul>
       <li>We do not operate user accounts or sell personal data.</li>
+      <li>We do not run our own servers for extension features.</li>
       <li>Most data stays on your device or in your Chrome sync profile.</li>
-      <li>Location is used only if you enable features that need it.</li>
-      <li>Network requests are limited to public content and weather APIs.</li>
+      <li>Location is used only when you enable prayer times or weather.</li>
+      <li>
+        Sukoon Tab Plus purchases are handled by
+        <a href="https://dodopayments.com/" rel="noopener noreferrer">Dodo Payments</a>, our payment
+        and licensing provider.
+      </li>
+    </ul>
+
+    <h2>Information we do not collect</h2>
+    <p>Sukoon Tab does not:</p>
+    <ul>
+      <li>Require you to create an account with us</li>
+      <li>Collect your name, email, or payment details directly</li>
+      <li>Track browsing history outside the new tab page</li>
+      <li>Send analytics or advertising data to the developer</li>
+      <li>Store your location on developer-operated servers</li>
     </ul>
 
     <h2>Data stored on your device</h2>
-    <p>The extension stores the following locally using Chrome extension storage:</p>
+    <p>The extension stores the following using Chrome extension storage:</p>
     <ul>
       <li>
-        <strong>Settings</strong> (theme, widget toggles, clock format, prayer method, name, and
-        similar preferences) in Chrome sync storage, so they can sync across signed-in Chrome
-        profiles if you use Chrome Sync.
+        <strong>Settings</strong> — theme, widget toggles, clock format, prayer calculation method,
+        display name, and similar preferences. These are saved in Chrome sync storage and may sync
+        across devices if you use Chrome Sync.
       </li>
       <li>
-        <strong>Daily content cache</strong> (today’s ayah, hadith, and dua) in local storage to
+        <strong>Daily content cache</strong> — today’s ayah, hadith, and dua, stored locally to
         reduce repeat network requests.
       </li>
       <li>
-        <strong>Saved favorites</strong> (ayahs, hadiths, and duas you choose to save with
-        Sukoon Tab Plus) in local storage on your device.
+        <strong>Saved favorites</strong> — ayahs, hadiths, and duas you save with Sukoon Tab Plus,
+        stored locally on your device.
       </li>
       <li>
-        <strong>Location coordinates</strong> (latitude and longitude only) in local storage when
-        you allow location access for prayer times or weather.
+        <strong>Location coordinates</strong> — latitude and longitude only, stored locally when you
+        allow location access for prayer times or weather.
       </li>
       <li>
-        <strong>Shortcuts</strong> you add on the new tab page, stored locally.
+        <strong>Shortcuts</strong> — links you add on the new tab page, stored locally.
+      </li>
+      <li>
+        <strong>Plus license data</strong> — if you activate Sukoon Tab Plus, your license key, a
+        browser-specific activation ID, activation label, and last validation timestamp are stored
+        locally. License data is <strong>not</strong> synced through Chrome Sync.
       </li>
     </ul>
 
@@ -71,12 +144,12 @@
     <p>
       If you enable prayer times or weather, the extension may request your device location through
       the browser’s geolocation API. This is used only to calculate prayer times, show approximate
-      local weather, and reverse-geocode a city label. Coordinates are stored locally so the
-      extension does not need to request location on every new tab.
+      local weather, and reverse-geocode a city label for display.
     </p>
     <p>
-      You can deny location access. Prayer times and weather will not work until location is
-      available, or until you use the location update option in Settings after granting permission.
+      Coordinates are cached locally so the extension does not need to request location on every new
+      tab. You can deny location access; prayer times and weather will not work until location is
+      available, or until you update location again from Settings after granting permission.
     </p>
     <p>We do not receive or store your location on our own servers.</p>
 
@@ -84,40 +157,94 @@
     <p>When you use Sukoon Tab, the extension may contact these services:</p>
     <ul>
       <li>
-        <strong>Al Quran Cloud</strong> — fetches Quran Arabic text and English translations for
-        daily ayahs. Only ayah references are sent, not personal information.
+        <strong>Al Quran Cloud</strong> (<a href="https://alquran.cloud/" rel="noopener noreferrer"
+          >alquran.cloud</a
+        >) — fetches Quran Arabic text and English translations for daily ayahs. Only ayah references
+        are sent, not personal information.
       </li>
       <li>
-        <strong>Open-Meteo</strong> — fetches weather data when the weather widget is enabled
-        (Sukoon Tab Plus). Requests include approximate coordinates.
+        <strong>Open-Meteo</strong> (<a href="https://open-meteo.com/" rel="noopener noreferrer"
+          >open-meteo.com</a
+        >) — fetches weather data when the weather widget is enabled (Sukoon Tab Plus). Requests
+        include approximate coordinates.
       </li>
       <li>
-        <strong>BigDataCloud</strong> — reverse-geocodes coordinates to a city name for display.
-        Requests include approximate coordinates.
+        <strong>BigDataCloud</strong> (<a
+          href="https://www.bigdatacloud.com/"
+          rel="noopener noreferrer"
+          >bigdatacloud.com</a
+        >) — reverse-geocodes coordinates to a city name for display. Requests include approximate
+        coordinates.
+      </li>
+      <li>
+        <strong>Dodo Payments</strong> (<a href="https://dodopayments.com/" rel="noopener noreferrer"
+          >dodopayments.com</a
+        >) — activates, validates, and deactivates Sukoon Tab Plus license keys when you choose to
+        use Plus. See the next section.
       </li>
     </ul>
     <p>
       Hadiths and duas shown by default are bundled inside the extension and do not require a network
       request.
     </p>
-
-    <h2>Payments and licensing</h2>
     <p>
-      Sukoon Tab Plus purchases are processed by Lemon Squeezy. When you activate a license key, the
-      extension contacts Lemon Squeezy to register and validate your license. Your license key and
-      activation instance ID are stored locally on your device.
+      Each third-party service has its own privacy policy. We encourage you to review those policies
+      if you want more detail about how those providers handle data.
     </p>
+
+    <h2>Payments and licensing (Sukoon Tab Plus)</h2>
+    <p>
+      Sukoon Tab Plus is optional. Purchases are processed by
+      <strong>Dodo Payments</strong>, which acts as the merchant of record. When you buy Plus, Dodo
+      Payments collects payment and customer information (such as email) according to its own privacy
+      policy. We do not receive your payment card details.
+    </p>
+    <p>After purchase, Dodo Payments provides a license key by email. If you activate Plus in the extension:</p>
+    <ul>
+      <li>
+        The extension sends your <strong>license key</strong> and a
+        <strong>browser activation label</strong> to Dodo Payments to register this installation.
+      </li>
+      <li>
+        The extension periodically sends your license key and activation ID to Dodo Payments to
+        confirm the license is still valid.
+      </li>
+      <li>
+        If you remove the license from Settings, the extension asks Dodo Payments to deactivate this
+        browser’s activation seat.
+      </li>
+    </ul>
+    <p>
+      Checkout opens in a new browser tab on Dodo Payments’ website when you choose to upgrade. The
+      extension does not embed payment forms inside the new tab page.
+    </p>
+    <p>
+      Dodo Payments privacy information:
+      <a href="https://dodopayments.com/privacy" rel="noopener noreferrer"
+        >dodopayments.com/privacy</a
+      >
+    </p>
+
+    <h2>Chrome permissions</h2>
+    <p>Sukoon Tab requests the following Chrome permissions:</p>
+    <ul>
+      <li><strong>storage</strong> — save settings, favorites, cache, shortcuts, and license data</li>
+      <li><strong>alarms</strong> — refresh daily content and re-check Plus license status</li>
+      <li><strong>geolocation</strong> — calculate prayer times and weather when enabled</li>
+      <li><strong>tabs</strong> — open Dodo Payments checkout in a new tab when you upgrade to Plus</li>
+      <li><strong>favicon</strong> — show website icons for shortcuts you add</li>
+    </ul>
 
     <h2>Children’s privacy</h2>
     <p>
-      Sukoon Tab is a general-purpose new tab extension and is not directed at children under 13. We do
-      not knowingly collect personal information from children.
+      Sukoon Tab is a general-purpose new tab extension and is not directed at children under 13. We
+      do not knowingly collect personal information from children.
     </p>
 
-    <h2>Changes</h2>
+    <h2>Changes to this policy</h2>
     <p>
-      We may update this policy from time to time. The “Last updated” date at the top will reflect
-      the latest revision.
+      We may update this policy from time to time. The “Last updated” date at the top of this page
+      reflects the latest revision. Material changes will be reflected in that date.
     </p>
 
     <h2>Contact</h2>
