@@ -79,7 +79,7 @@
   </head>
   <body>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: June 15, 2026</p>
+    <p class="updated">Last updated: June 16, 2026</p>
 
     <p>
       Sukoon Tab (“we”, “the extension”) is a Chrome new tab extension. This policy describes what
@@ -90,7 +90,7 @@
     <h2>Summary</h2>
     <ul>
       <li>We do not operate user accounts or sell personal data.</li>
-      <li>We do not run our own servers for extension features.</li>
+      <li>We do not run application servers that store your personal data.</li>
       <li>Most data stays on your device or in your Chrome sync profile.</li>
       <li>Location is used only when you enable prayer times or weather.</li>
       <li>
@@ -121,6 +121,11 @@
       <li>
         <strong>Daily content cache</strong> — today’s ayah, hadith, and dua, stored locally to
         reduce repeat network requests.
+      </li>
+      <li>
+        <strong>Curated ayah catalog cache</strong> — a local copy of the ayah reference list used
+        for daily ayah rotation, refreshed periodically from a developer-hosted static file when
+        updates are available.
       </li>
       <li>
         <strong>Saved favorites</strong> — ayahs, hadiths, and duas you save with Sukoon Tab Plus,
@@ -182,10 +187,19 @@
         >) — activates, validates, and deactivates Sukoon Tab Plus license keys when you choose to
         use Plus. See the next section.
       </li>
+      <li>
+        <strong>GitHub Pages</strong> (<a
+          href="https://pages.github.com/"
+          rel="noopener noreferrer"
+          >pages.github.com</a
+        >) — may fetch an updated curated ayah reference list (Quran surah/ayah references only, no
+        personal information). A bundled copy ships with the extension and is used if the remote file
+        is unavailable.
+      </li>
     </ul>
     <p>
-      Hadiths and duas shown by default are bundled inside the extension and do not require a network
-      request.
+      Hadiths and duas are bundled inside the extension. The curated ayah list is also bundled, with
+      optional periodic updates from the developer-hosted file above.
     </p>
     <p>
       Each third-party service has its own privacy policy. We encourage you to review those policies
